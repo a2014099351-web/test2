@@ -7,7 +7,7 @@
 | 自动化目标 | `test_md`（GoogleTest） |
 | 最近全量结果 | **23 / 23 PASSED**（Debug，2026-07-18） |
 | 行覆盖率 | **85.7%**（1047 / 1222），OpenCppCoverage 0.9.9.0 |
-| 构建 | VS 2019 / Qt5 / vcpkg（与 kcalculator 同 toolchain） |
+| 构建 | VS 2019 / Qt5 / vcpkg |
 
 记录格式：验证项 → 现象 → 处理 → 结果。
 
