@@ -214,7 +214,7 @@ KCommandStack ──executes──► KICommand
 | 必选 | MVC | Model · View · `KMainWindow` 协调 |
 | 必选 | 序列化 | `KXmlSerializer` + `KWidget::save` / `load` |
 | 必选 | 开闭原则 | 只增 `widgets/*.cpp` 或插件，不改序列化核心 |
-| 可选 | 插件 + DIP | `KIWidgetPlugin` + `md_create_plugin`；`KPluginLoader` |
+| 可选 | 插件 | `KIWidgetPlugin` + `md_create_plugin`；`KPluginLoader` |
 | 可选 | 组合 | `KWidget` 父子树 + 容器（如 GroupBox）+ Object Inspector |
 
 ## 6. 如何扩展一个新控件（只增文件）
