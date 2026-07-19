@@ -5,8 +5,8 @@
 | 项目 | minidesigner |
 | 方法 | 手工 UI 验收 + GoogleTest 逻辑层回归 + OpenCppCoverage 行覆盖率 |
 | 自动化目标 | `test_md`（GoogleTest） |
-| 最近全量结果 | **24 / 24 PASSED**（Debug，2026-07-19；含 `Factory.UnregisterTypeRemovesCreator`） |
-| 行覆盖率 | **86.0%**（1131 / 1315），OpenCppCoverage 0.9.9.0（2026-07-19 复测） |
+| 最近全量结果 | **24 / 24 PASSED**（Debug） |
+| 行覆盖率 | **86.0%**（1131 / 1315），OpenCppCoverage 0.9.9.0（2026-07-19） |
 | 构建 | VS 2019 / Qt5 / vcpkg |
 
 记录格式：验证项 → 现象 → 处理 → 结果。
@@ -76,21 +76,7 @@ build\bin\Debug\test_md.exe
 | gtest | 24 / 24 PASSED |
 
 说明：`test_md` **不含** Widgets UI（`kmainwindow` / `kdesigncanvas` / dock 等），覆盖率反映可单测逻辑层与内建控件实现，而非整个 GUI。  
-报告目录：`CoverageReport/`（HTML + `cobertura.xml`）。
 
-复测命令（在 `test_md.exe` 所在目录，并保证 Qt/vcpkg DLL 在 `PATH`）：
-
-```bat
-"C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" ^
-  --sources <repo>\src\model --sources <repo>\src\factory ^
-  --sources <repo>\src\command --sources <repo>\src\serialize ^
-  --sources <repo>\widgets ^
-  --excluded_sources autogen --excluded_sources moc_ --excluded_sources \test\ ^
-  --modules test_md --modules md_core --cover_children ^
-  --export_type html:<repo>\CoverageReport ^
-  --export_type cobertura:<repo>\CoverageReport\cobertura.xml ^
-  -- test_md.exe
-```
 
 ### 3.2 主要源文件明细（`.cpp`）
 
